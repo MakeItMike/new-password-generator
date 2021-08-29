@@ -1,0 +1,140 @@
+/* NOTE:
+
+	https://fonts.google.com/specimen/Cinzel+Decorative?preview.text=Password%20Generator&preview.text_type=custom&category=Display#standard-styles
+	
+	https://fonts.google.com/specimen/Metal+Mania?category=Display&preview.text=Michael%20Woodyard&preview.text_type=custom
+	
+*/
+
+/*———————————————————————————————————————*/
+/* SECTION Imports                       */
+/*———————————————————————————————————————*/
+
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+/*———————————————————————————————————————*/
+/* SECTION Variables                     */
+/*———————————————————————————————————————*/
+
+:root {
+	/* NOTE: Font Families */
+	--font-family-1: 'Righteous', cursive;;
+
+	/* NOTE: Text Colors */
+	--text-color-1: rgb(255, 255, 255);
+	--text-color-2: rgb(0, 0, 0);
+
+	/* NOTE: Background Colors */
+	--background-color-1: rgb(255, 255, 255);
+
+	/* NOTE: Borders */
+	--border-1:  0.5em solid rgb(255, 255, 255);
+	--border-2: 0.25em solid rgb(255, 255, 255);
+
+	/* NOTE: Gradient Colors */
+	--gradient-1: ;
+	--gradient-2: ;
+	--gradient-3: ;
+	--gradient-4: ;
+}
+
+/*———————————————————————————————————————*/
+/* SECTION Elements                      */
+/*———————————————————————————————————————*/
+
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: background-gradient 15s ease infinite;
+	height: 100vh;
+}
+
+/*———————————————————————————————————————*/
+/* SECTION Id's                          */
+/*———————————————————————————————————————*/
+
+#main-container {
+	width: 50em;
+	height: 50em;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#title {
+	width: 100%;
+	border: var(--border-1);
+	height: 5em;
+	position: relative;
+	top: 4em;
+	background-color: rgba(0, 0, 0, 0.5);
+
+}
+
+#title h1 {
+	font-family: var(--font-family-1);
+	color: var(--text-color-1);
+	font-weight: 400;
+	text-align: center;
+	margin: 0;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+#generator-container {
+	position: relative;
+	top: 8em;
+	height: 35em;
+	border: var(--border-1);
+	text-align: center;
+	color: var(--text-color-1);
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#generated-password {
+	border: var(--border-2);
+	position: relative;
+	margin: 0;
+	top: 1em;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 25em;
+	height: 3em;
+	font-family: var(--font-family-1);
+	font-weight: 400;
+	overflow-x: hidden;
+  	overflow-y: scroll;
+}
+
+
+#character-amount {
+	position: relative;
+	top: 5em;
+}
+
+
+/*———————————————————————————————————————*/
+/* SECTION Classes                       */
+/*———————————————————————————————————————*/
+
+
+
+/*———————————————————————————————————————*/
+/* SECTION Keyframes                     */
+/*———————————————————————————————————————*/
+
+@keyframes background-gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
