@@ -4,9 +4,8 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Portfolio</title>
+	<title>Password Generator</title>
 	<link rel="stylesheet" href="style.css">
-	<link rel="shortcut icon" href="images/MakeItMike (1).ico" />
 	<script src="script.js"></script>
 </head>
 <body>
@@ -18,17 +17,36 @@
 		<div id="generator-container">
 			<div id="password-container">
 				<div id="generated-password">
-					<p>AAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+					<p  id="password">Testing text</p>
 				</div>
-			
-				<div id="character-amount">
-					<input type="range" min="1" max="50" value="10" id="range">
-					<input type="number" min="1" max="50" value="10" id="number">
+
+				<button id="copy-text-btn" class="buttons" onclick="copyText()">Copy</button>
+			</div>
+
+			<div id="character-amount-container">
+				<h2>Character Amount</h2>
+				<input type="range" min="1" max="50" value="10" id="range">
+				<input type="number" min="1" max="50" value="10" id="number">
+			</div>
+
+			<div id="options-container">
+				<div id="include-uppercase-container">
+					<label class="labels" for="includeUppercase">Uppercase:</label>
+					<input type="checkbox" id="includeUppercase">
+				</div>
+
+				<div id="include-numbers-container">
+					<label class="labels" for="includeNumbers">Numbers:</label>
+					<input type="checkbox" id="includeNumbers">
+				</div>
+
+				<div id="include-symbols-container">
+					<label class="labels" for="includeSymbols">Symbols:</label>
+					<input type="checkbox" id="includeSymbols">	
 				</div>
 			</div>
 
-
-			
+			<button id="generate-password-btn" class="buttons" onclick="generatePassword()">Generate Password</button>
 		</div>
 	</div>
 </body>

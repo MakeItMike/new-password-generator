@@ -14,13 +14,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Forum&display=swap');
+
 /*———————————————————————————————————————*/
 /* SECTION Variables                     */
 /*———————————————————————————————————————*/
 
 :root {
 	/* NOTE: Font Families */
-	--font-family-1: 'Righteous', cursive;;
+	--font-family-1: 'Righteous', cursive;
+	--font-family-2: 'Forum', cursive;
 
 	/* NOTE: Text Colors */
 	--text-color-1: rgb(255, 255, 255);
@@ -32,6 +35,7 @@
 	/* NOTE: Borders */
 	--border-1:  0.5em solid rgb(255, 255, 255);
 	--border-2: 0.25em solid rgb(255, 255, 255);
+	--border-3:  0.15em solid rgb(255, 255, 255);
 
 	/* NOTE: Gradient Colors */
 	--gradient-1: ;
@@ -49,6 +53,7 @@ body {
 	background-size: 400% 400%;
 	animation: background-gradient 15s ease infinite;
 	height: 100vh;
+	overflow: hidden;
 }
 
 /*———————————————————————————————————————*/
@@ -56,7 +61,7 @@ body {
 /*———————————————————————————————————————*/
 
 #main-container {
-	width: 50em;
+	min-width: 50em;
 	height: 50em;
 	position: absolute;
 	left: 50%;
@@ -71,7 +76,7 @@ body {
 	position: relative;
 	top: 4em;
 	background-color: rgba(0, 0, 0, 0.5);
-
+	user-select: none;
 }
 
 #title h1 {
@@ -103,17 +108,96 @@ body {
 	left: 50%;
 	transform: translateX(-50%);
 	width: 25em;
-	height: 3em;
+	height: 5em;
 	font-family: var(--font-family-1);
 	font-weight: 400;
-	overflow-x: hidden;
-  	overflow-y: scroll;
+	overflow-x: scroll;
+	overflow-y: hidden;
 }
 
+#generated-password p {
+	position: relative;
+	padding-left: 1em;
+	font-size: 1.5em;
+	font-family: var(--font-family-2);
+}
 
-#character-amount {
+#copy-text-btn {
+	position: absolute;
+	right: 4em;
+	top: 1.5em;
+	height: 2.25em;
+	font-size: 1.5em;
+	transition: 0.5s;
+}
+
+#copy-text-btn:hover {
+	background-color: black;
+	border-radius: 1em;
+}
+
+#generated-password::-webkit-scrollbar {
+	height: 10px;/* height of horizontal scrollbar ← You're missing this */
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#generated-password::-webkit-scrollbar-thumb {
+	background-color: var(--background-color-1);
+}
+
+#generated-password::-webkit-scrollbar-thumb:hover {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+#character-amount-container {
 	position: relative;
 	top: 5em;
+	width: 15em;
+	left: 50%;
+	transform: translateX(-50%);
+	border: var(--border-2);
+	padding: 0.5em;
+}
+
+#character-amount-container h2 {
+	font-family: var(--font-family-2);
+	font-weight: 400;
+	user-select: none;
+}
+
+#options-container {
+	position: relative;
+	top: 6em;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 14em;
+	padding: 1em;
+	text-align: left;
+	border: var(--border-2);
+}
+
+#options-container input {
+	position: absolute;
+	right: 8em;
+	background-color: none;
+	margin-top: 0.5em;
+	font-family: var(--font-family-2);
+	font-weight: 400;
+}
+
+#generate-password-btn {
+	position: absolute;
+	bottom: 1em;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 2em;
+	padding: 0.5em;
+	transition: 0.5s;
+}
+
+#generate-password-btn:hover {
+	background-color: black;
+	border-radius: 1em;
 }
 
 
@@ -121,7 +205,16 @@ body {
 /* SECTION Classes                       */
 /*———————————————————————————————————————*/
 
+.buttons {
+	background: none;
+	color: var(--text-color-1);
+	border: var(--border-3);
+	font-family: var(--font-family-2);
+}
 
+.labels {
+	font-size: 1.5em;
+}
 
 /*———————————————————————————————————————*/
 /* SECTION Keyframes                     */
