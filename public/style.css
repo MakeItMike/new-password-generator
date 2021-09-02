@@ -31,6 +31,7 @@
 
 	/* NOTE: Background Colors */
 	--background-color-1: rgb(255, 255, 255);
+	--background-color-2: rgba(0, 0, 0, 0.5);
 
 	/* NOTE: Borders */
 	--border-1:  0.5em solid rgb(255, 255, 255);
@@ -65,8 +66,8 @@ body {
 	height: 50em;
 	position: absolute;
 	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
+	bottom: 12em;
+	transform: translateX(-50%);
 }
 
 #title {
@@ -75,7 +76,7 @@ body {
 	height: 5em;
 	position: relative;
 	top: 4em;
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--background-color-2);;
 	user-select: none;
 }
 
@@ -92,12 +93,12 @@ body {
 
 #generator-container {
 	position: relative;
-	top: 8em;
+	top: 5em;
 	height: 35em;
 	border: var(--border-1);
 	text-align: center;
 	color: var(--text-color-1);
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--background-color-2);;
 }
 
 #generated-password {
@@ -138,7 +139,7 @@ body {
 
 #generated-password::-webkit-scrollbar {
 	height: 10px;/* height of horizontal scrollbar ← You're missing this */
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: var(--background-color-2);;
 }
 
 #generated-password::-webkit-scrollbar-thumb {
@@ -165,6 +166,35 @@ body {
 	user-select: none;
 }
 
+/*
+#character-range {
+	appearance: none;
+	background: none;
+	border: var(--border-2);
+	height: 2em;
+}
+
+#character-range::-webkit-slider-thumb {
+	position: relative;
+	bottom: 60%;
+}
+
+#character-range::-webkit-slider-runnable-track {
+	height: 0.25em;
+	background: var(--background-color-1);
+}
+*/
+
+#character-number {
+	position: relative;
+	font-weight: 400;
+	height: 2em;
+	background: none;
+	border: var(--border-2);
+	color: var(--text-color-1);
+	font-family: var(--font-family-1);
+}
+
 #options-container {
 	position: relative;
 	top: 5em;
@@ -183,21 +213,15 @@ body {
 
 #options-container input {
 	position: relative;
-	appearance: none;
 	border: var(--border-2);
 	width: 1.5em;
 	height: 1.5em;
 	left: 9em;
-	top: 0.5em;
+	top: 0.25em;
 	margin-top: 0.5em;
 	font-family: var(--font-family-2);
 	font-weight: 400;
 }
-
-#options-container input:hover {
-	background-color: black;
-}
-
 
 #generate-password-btn {
 	position: absolute;
@@ -214,6 +238,32 @@ body {
 	border-radius: 1em;
 }
 
+/* SECTION: Previous Passwords */
+#previous-passwords-container {
+	width: 49em;
+	height: 12em;
+	border: var(--border-1);
+	position: relative;
+	top: 6em;
+	background-color: var(--background-color-2);
+}
+
+#previous-passwords-container h1 {
+	font-family: var(--font-family-1);
+	color: var(--text-color-1);
+	font-weight: 400;
+	position: relative;
+	text-align: center;
+	bottom: 0.5em;
+}
+
+#previous-passwords-container p {
+	color: var(--text-color-1);
+	font-family: var(--font-family-2);
+	font-size: 1.5em;
+	position: relative;
+	width: 100%;
+}
 
 /*———————————————————————————————————————*/
 /* SECTION Classes                       */

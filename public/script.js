@@ -24,13 +24,14 @@ function copyText() {
 }
 
 // TODO: Read and fix anything wrong.
-const characterAmountRange    = document.getElementById('range');
-const characterAmountNumber   = document.getElementById('number');
+const characterAmountRange    = document.getElementById('character-range');
+const characterAmountNumber   = document.getElementById('character-number');
 const includeUppercaseElement = document.getElementById('includeUppercase');
 const includeNumbersElement   = document.getElementById('includeNumbers');
 const includeSymbolsElement   = document.getElementById('includeSymbols');
 const form 				      = document.getElementById('password-form');
 const passwordDisplay         = document.getElementById('password');
+const previousPasswordDisplay = document.getElementById('previous-passwords');
 
 const UPPERCASE_CHAR_CODES  = arrayFromLowToHigh(65, 90);
 const LOWERCASE_CHAR_CODES  = arrayFromLowToHigh(97, 122);
@@ -44,7 +45,7 @@ const SYMBOL_CHAR_CODES     = arrayFromLowToHigh(33, 47)
 characterAmountNumber.addEventListener('input', syncCharacterAmount);
 characterAmountRange.addEventListener('input', syncCharacterAmount);
 
-page.addEventListener('submit', e =>{
+form.addEventListener('submit', e =>{
 	e.preventDefault();
 	const characterAmount = characterAmountNumber.value;
 	const includeUppercase = includeUppercaseElement.checked;
@@ -53,10 +54,11 @@ page.addEventListener('submit', e =>{
 	const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols);
 	passwordDisplay.innerText = password;
 
-	// WIP \\
-	document.cookie = password;
-	previousPasswordDisplay.innerText = document.cookie;
-	console.log(document.cookie);
+	// TODO: WIP
+	const previousPasswords = new Array(password);
+	//previousPasswords.push(password);
+	previousPasswordDisplay.innerText = previousPasswords;
+	console.log(previousPasswords);
 });
 
 function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols){
