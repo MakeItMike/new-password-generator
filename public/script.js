@@ -54,17 +54,7 @@ form.addEventListener('submit', e =>{
 	const password = generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols);
 	passwordDisplay.innerText = password;
 
-	// TODO: Previous Passwords
-	// NOTE: You'll probably need a JSON file to save previous passwords.
-	const previousPasswords = new Array();
-	//const previousPasswords = localStorage.getItem('previous-passwords');
-
-	for (let i = 0; i < previousPasswords.length; i++) {
-		if (password != previousPasswords[i]) {
-			previousPasswords.push(password);
-		}
-	}
-	console.log(previousPasswords);
+	previousPasswordDisplay.innerText += password + "\n";
 });
 
 function generatePassword(characterAmount, includeUppercase, includeNumbers, includeSymbols){

@@ -134,7 +134,6 @@ body {
 
 #copy-text-btn:hover {
 	background-color: black;
-	border-radius: 1em;
 }
 
 #generated-password::-webkit-scrollbar {
@@ -235,7 +234,6 @@ body {
 
 #generate-password-btn:hover {
 	background-color: black;
-	border-radius: 1em;
 }
 
 /* SECTION: Previous Passwords */
@@ -246,6 +244,8 @@ body {
 	position: relative;
 	top: 6em;
 	background-color: var(--background-color-2);
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 #previous-passwords-container h1 {
@@ -262,7 +262,10 @@ body {
 	font-family: var(--font-family-2);
 	font-size: 1.5em;
 	position: relative;
+	bottom: 1em;
 	width: 100%;
+	height: auto;
+	text-align: center;
 }
 
 /*———————————————————————————————————————*/
