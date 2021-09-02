@@ -24,13 +24,13 @@ function copyText() {
 }
 
 // TODO: Read and fix anything wrong.
-const characterAmountRange = document.getElementById('range');
-const characterAmountNumber = document.getElementById('number');
+const characterAmountRange    = document.getElementById('range');
+const characterAmountNumber   = document.getElementById('number');
 const includeUppercaseElement = document.getElementById('includeUppercase');
-const includeNumbersElement = document.getElementById('includeNumbers');
-const includeSymbolsElement = document.getElementById('includeSymbols');
-const form = document.getElementById('passwordGeneratorForm');
-const passwordDisplay = document.getElementById('passwordDisplay');
+const includeNumbersElement   = document.getElementById('includeNumbers');
+const includeSymbolsElement   = document.getElementById('includeSymbols');
+const form 				      = document.getElementById('password-form');
+const passwordDisplay         = document.getElementById('password');
 
 const UPPERCASE_CHAR_CODES  = arrayFromLowToHigh(65, 90);
 const LOWERCASE_CHAR_CODES  = arrayFromLowToHigh(97, 122);
@@ -44,7 +44,7 @@ const SYMBOL_CHAR_CODES     = arrayFromLowToHigh(33, 47)
 characterAmountNumber.addEventListener('input', syncCharacterAmount);
 characterAmountRange.addEventListener('input', syncCharacterAmount);
 
-form.addEventListener('submit', e =>{
+page.addEventListener('submit', e =>{
 	e.preventDefault();
 	const characterAmount = characterAmountNumber.value;
 	const includeUppercase = includeUppercaseElement.checked;

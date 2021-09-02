@@ -183,16 +183,21 @@ body {
 
 #options-container input {
 	position: relative;
-	background-color: none;
+	appearance: none;
+	border: var(--border-2);
+	width: 1.5em;
+	height: 1.5em;
 	left: 9em;
+	top: 0.5em;
 	margin-top: 0.5em;
 	font-family: var(--font-family-2);
 	font-weight: 400;
 }
 
 #options-container input:hover {
-	background: white;
+	background-color: black;
 }
+
 
 #generate-password-btn {
 	position: absolute;
@@ -219,6 +224,7 @@ body {
 	color: var(--text-color-1);
 	border: var(--border-3);
 	font-family: var(--font-family-2);
+	cursor: pointer;
 }
 
 .labels {
