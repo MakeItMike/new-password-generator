@@ -61,7 +61,7 @@ body {
 /*———————————————————————————————————————*/
 
 #main-container {
-	min-width: 50em;
+	width: 50em;
 	height: 50em;
 	position: absolute;
 	left: 50%;
@@ -70,7 +70,7 @@ body {
 }
 
 #title {
-	width: 100%;
+	width: 49em;
 	border: var(--border-1);
 	height: 5em;
 	position: relative;
@@ -128,7 +128,7 @@ body {
 	top: 1.5em;
 	height: 2.25em;
 	font-size: 1.5em;
-	transition: 0.5s;
+	transition: 0.25s;
 }
 
 #copy-text-btn:hover {
@@ -151,12 +151,12 @@ body {
 
 #character-amount-container {
 	position: relative;
-	top: 5em;
-	width: 15em;
+	top: 3em;
+	width: 25em;
 	left: 50%;
 	transform: translateX(-50%);
 	border: var(--border-2);
-	padding: 0.5em;
+	padding-bottom: 1em;
 }
 
 #character-amount-container h2 {
@@ -167,22 +167,31 @@ body {
 
 #options-container {
 	position: relative;
-	top: 6em;
+	top: 5em;
 	left: 50%;
 	transform: translateX(-50%);
-	width: 14em;
+	width: 23em;
 	padding: 1em;
 	text-align: left;
 	border: var(--border-2);
 }
 
+#options-container label {
+	position: relative;
+	left: 5em;
+}
+
 #options-container input {
-	position: absolute;
-	right: 8em;
+	position: relative;
 	background-color: none;
+	left: 9em;
 	margin-top: 0.5em;
 	font-family: var(--font-family-2);
 	font-weight: 400;
+}
+
+#options-container input:hover {
+	background: white;
 }
 
 #generate-password-btn {
@@ -192,7 +201,7 @@ body {
 	transform: translateX(-50%);
 	font-size: 2em;
 	padding: 0.5em;
-	transition: 0.5s;
+	transition: 0.25s;
 }
 
 #generate-password-btn:hover {
